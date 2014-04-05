@@ -68,7 +68,11 @@ class {'sigmah::maven_install_missing_plugins' : }
 # To Do :: Add Proxy support for SVN conf based on the vagrant-proxy-conf settings
 package {"subversion":
  ensure => "installed"
-}
+} ->
+
+class {'sigmah::subversion_proxy_config' : }
+
+
 
 
 
