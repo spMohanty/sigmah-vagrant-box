@@ -1,7 +1,7 @@
-vagrant-javadev-box
+sigmah-vagrant-box
 ================
 
-Build a basic Vagrant box set for Java development with Jdk, Postgres and Maven installed via puppet.
+Build the Vagrant box set to setup the Sigmah Developers Environment
 
 ## Installation
 
@@ -38,16 +38,8 @@ All as git submodules unless otherwise stated. Also not listing dependancies, on
 
 ## Changelog
 
-#### 21-2-2014
-
-* Update Postgres to 9.2
-* Update Maven to 3.1.1
-* Update Vagrant version 2 config.
-
-#### 14-6-2013
-
-* Add Postgres, Jdk and Maven.
-* Initial commit with Vagrant version 1 config.
+#### 5th April, 2014
+Forked the intial Vagrant Box set for setting up the Java Decelopment Env from https://github.com/rob-murray/vagrant-javadev-box
 
 
 ## Contributions
