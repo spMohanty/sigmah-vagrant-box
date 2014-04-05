@@ -16,3 +16,6 @@
 [submodule "puppet/modules/maven"]
 	path = puppet/modules/maven
 	url = https://github.com/7terminals/puppet-maven
+[submodule "puppet/modules/puppet-subversion"]
+	path = puppet/modules/puppet-subversion
+	url = https://github.com/pdxmph/puppet-subversion
