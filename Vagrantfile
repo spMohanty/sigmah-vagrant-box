@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
   # Share the working dir - host, guest
   config.vm.synced_folder "shared", "/vagrant"
 
-  config.vm.provision "shell", inline: "apt-get update --fix-missing"
+  #config.vm.provision "shell", inline: "apt-get update --fix-missing"
 
   config.vm.provision :puppet do |puppet|
      puppet.manifests_path = "puppet/manifests"

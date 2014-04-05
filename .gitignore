@@ -8,3 +8,4 @@
 shared/sigmah/
 shared/temp/
 puppet/modules/maven/files/
+puppet/modules/sigmah/manifests/init.pp

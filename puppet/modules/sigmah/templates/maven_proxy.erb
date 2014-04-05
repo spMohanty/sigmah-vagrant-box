@@ -7,10 +7,10 @@
       <id>myproxy</id>
       <active>true</active>
       <protocol>http</protocol>
-      <host>proxy.iiit.ac.in</host>
-      <port>8080</port>
-      <username></username>
-      <password></password>
+      <host><%= @proxy_host  %></host>
+      <port><%= @proxy_port %></port>
+      <username><%= @proxy_username %></username>
+      <password><%= @proxy_password %></password>
       <nonProxyHosts></nonProxyHosts>
     </proxy>
   </proxies>
