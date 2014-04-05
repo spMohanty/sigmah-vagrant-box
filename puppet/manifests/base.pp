@@ -49,21 +49,38 @@ maven::setup { "maven":
   deploymentdir => '/home/vagrant/apache-maven',
   user          => 'vagrant',
   pathfile      => '/home/vagrant/.bashrc'
-}
+} ->
 
 #ToDo : Temporary Solution !! Come up with a better solution for this.
-
-    ##Copy filled up template from /vagrant/temp/settings.xml
-    file {'maven-proxy':
-      path => "/home/vagrant/.m2/settings.xml",
+##Copy filled up template from /vagrant/temp/settings.xml
+    # First check the local configuration directory exists and has correct permissions
+    exec { "ensure /home/vagrant/.m2":
+      command => "/bin/mkdir -p /home/vagrant/.m2",
+      creates => "/home/vagrant/.m2",
+      user => "vagrant",
+      group => "vagrant",
+    } ->
+    #Copy over the template settings with correct permissions
+    file {'maven-proxy-settings':
+      path => ["/home/vagrant/.m2/settings.xml"],
       ensure => present,
       mode => 0775,
+      owner => 'vagrant',
+      group => 'vagrant',
       source => "/vagrant/settings_templates/maven-settings.xml"
-    }
-
-##Install missing libraries 
-
-
+    } ->
+    
+  ##Install missing Maven plugins taken from https://code.google.com/p/sigma-h/downloads/detail?name=missing-jar-to-build-Sigmah.zip
+  exec {"install_gwt-maps_1_1_1_jar" : 
+    command => "/home/vagrant/apache-maven/bin/mvn install:install-file -Dfile=/vagrant/missing-jar-to-build-Sigmah/gwt-maps-1.1.1.its_a_jar -DgroupId=com.google.gwt.google-apis -DartifactId=gwt-maps -Dversion=1.1.1 -Dpackaging=jar",
+    user => "vagrant",
+    logoutput => "true"
+  } ->
+  exec {"install_gxt_2_2_5_gwt22_jar" : 
+    command => "/home/vagrant/apache-maven/bin/mvn install:install-file -Dfile=/vagrant/missing-jar-to-build-Sigmah/gxt-2.2.5-gwt22.its_a_jar -DgroupId=com.extjs -DartifactId=gxt -Dversion=2.2.5-gwt22 -Dpackaging=jar",
+    user => "vagrant",
+    logoutput => "true"
+  }
 
 # Install Subversion client (only temporary...will soon be moving to github :D :D )
 #
@@ -71,6 +88,8 @@ maven::setup { "maven":
 package {"subversion":
  ensure => "installed"
 }
+
+
 
 
 
