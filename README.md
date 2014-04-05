@@ -7,7 +7,7 @@ Build the Vagrant box set to setup the Sigmah Developers Environment
 
 * If you haven't already, go over to [http://www.vagrantup.com/](http://www.vagrantup.com/) and follow the installation instructions
 * Add the box `precise64` via `vagrant box add precise64 http://files.vagrantup.com/precise64.box`
-* Clone this repo `git clone https://github.com/rob-murray/vagrant-javadev-box.git`
+* Clone this repo `git clone https://github.com/spMohanty/sigmah-vagrant-box.git`
 * Init the submodules `git submodule update --init`
 * `mkdir puppet/modules/maven/files`
 * Download the Maven archive `apache-maven-3.1.1-bin.tar.gz` from [http://maven.apache.org](http://maven.apache.org) to `puppet/modules/maven/files` directory
