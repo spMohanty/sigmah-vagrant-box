@@ -51,7 +51,18 @@ maven::setup { "maven":
   pathfile      => '/home/vagrant/.bashrc'
 }
 
-# To - Do :: Figure something out about the maven proxy 
+#ToDo : Temporary Solution !! Come up with a better solution for this.
+
+    ##Copy filled up template from /vagrant/temp/settings.xml
+    file {'maven-proxy':
+      path => "/home/vagrant/.m2/settings.xml",
+      ensure => present,
+      mode => 0775,
+      source => "/vagrant/settings_templates/maven-settings.xml"
+    }
+
+##Install missing libraries 
+
 
 
 # Install Subversion client (only temporary...will soon be moving to github :D :D )
