@@ -1,13 +1,13 @@
 #
 # base.pp
-# Build Vagrant box configuration from modules
+# Build Sigmah Vagrant box configuration from modules
 # 
-# vagrant-javadev-box
-# https://github.com/rob-murray/vagrant-javadev-box
+# sigmah-vagrant-box
+# https://github.com/spMohanty/sigmah-vagrant-box
 #
 
 
-# Install Oracle Java JDK 1.6
+# Install openJDK 1.6
 # Note : Installing 1.6 instead of 1.7 or the latest because
 # Sigmah is developed under JDK 1.6 and issues like
 # the one discussed here : https://groups.google.com/forum/#!searchin/sigmah-dev/lucia/sigmah-dev/vqTWs6_TU-U/KFoYu6_I_DAJ
