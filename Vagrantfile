@@ -3,9 +3,9 @@
 
 
 #
-# Vagrant configuration for vagrant-jdev-box
+# Vagrant configuration for sigmah-vagrant-box
 # @link
-# https://github.com/rob-murray/vagrant-javadev-box
+# https://github.com/spMohanty/sigmah-vagrant-box
 #
 Vagrant.configure("2") do |config|
   # All Vagrant configuration is done here. The most common configuration
@@ -20,6 +20,12 @@ Vagrant.configure("2") do |config|
   # Forward ports
   config.vm.network :forwarded_port, guest: 8080,    host: 8080    # Java app server; jetty
   config.vm.network :forwarded_port, guest: 5432,    host: 5432    # Postgres DB
+
+  # Allow vagrant to access hosts internet
+  config.vm.provider :virtualbox do |vb|
+     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  end
 
   # Share the working dir - host, guest
   config.vm.synced_folder "webapp", "/vagrant"
