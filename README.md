@@ -32,7 +32,6 @@ You may want to edit Postgres config in the `puppet/manifests/base.pp` file.
 
 All as git submodules unless otherwise stated. Also not listing dependancies, only major modules.
 
-* [Java](https://github.com/puppetlabs/puppetlabs-java)
 * [Postgresql](https://github.com/puppetlabs/puppet-postgresql)
 * [Maven](https://github.com/7terminals/puppet-maven)
 

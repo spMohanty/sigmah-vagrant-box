@@ -7,11 +7,19 @@
 #
 
 
-# Install latest jdk
-class { 'java':
-  distribution => 'jdk',
-  version      => 'latest',
+# Install Oracle Java JDK 1.6
+# Note : Installing 1.6 instead of 1.7 or the latest because
+# Sigmah is developed under JDK 1.6 and issues like
+# the one discussed here : https://groups.google.com/forum/#!searchin/sigmah-dev/lucia/sigmah-dev/vqTWs6_TU-U/KFoYu6_I_DAJ
+# come up in case of JDK 1.7
+package {"openjdk-6-jdk":
+ ensure => installed,
+ name => $operatingsystem ? {
+   Ubuntu => "openjdk-6-jdk",
+   CentOS => "java-1.6.0-openjdk",
+ }
 }
+
 
 # Postgresql general config
 class { 'postgresql':
