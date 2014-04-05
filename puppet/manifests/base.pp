@@ -70,7 +70,20 @@ package {"subversion":
  ensure => "installed"
 } ->
 
-class {'sigmah::subversion_proxy_config' : }
+class {'sigmah::subversion_proxy_config' : } ->
+
+class {'subversion:checkout' :}
+
+## Clone the sigmah repo from google code
+#subversion::checkout { "application/trunk": 
+#    repopath    => "/svn/trunk",
+#    workingdir  => "/vagrant/sigmah-svn",
+#    host        => "sigma-h.googlecode.com",
+#    method      => "http",
+#    svnuser     => "",
+#    password    => "",
+#     require     => File["/vagrant/sigmah-svn"]
+#}
 
 
 
