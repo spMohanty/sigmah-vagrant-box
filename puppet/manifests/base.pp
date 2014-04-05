@@ -20,7 +20,6 @@ package {"openjdk-6-jdk":
  }
 }
 
-
 # Postgresql general config
 class { 'postgresql':
   version => '9.2',
@@ -51,3 +50,16 @@ maven::setup { "maven":
   user          => 'vagrant',
   pathfile      => '/home/vagrant/.bashrc'
 }
+
+# To - Do :: Figure something out about the maven proxy 
+
+
+# Install Subversion client (only temporary...will soon be moving to github :D :D )
+#
+# To Do :: Add Proxy support for SVN conf based on the vagrant-proxy-conf settings
+package {"subversion":
+ ensure => "installed"
+}
+
+
+

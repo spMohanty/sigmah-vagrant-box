@@ -5,4 +5,6 @@
 
 *.gz
 
+shared/sigmah/
+shared/temp/
 puppet/modules/maven/files/
