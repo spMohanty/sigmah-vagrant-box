@@ -17,7 +17,7 @@ Build the Vagrant box set to setup the Sigmah Developers Environment
 
 Feel free to customise further or use as is.
 
-The directory `webapp` is sync'd to `/vagrant` so place your code in there and hack away.
+The directory `shared` is sync'd to `/vagrant`......so you can place files that you need to be shared with the VM, there.
 
 Ports 8080 and 5432 are mapped to their respective ports on the VM.
 

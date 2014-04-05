@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Share the working dir - host, guest
-  config.vm.synced_folder "webapp", "/vagrant"
+  config.vm.synced_folder "shared", "/vagrant"
 
   config.vm.provision "shell", inline: "apt-get update --fix-missing"
 
