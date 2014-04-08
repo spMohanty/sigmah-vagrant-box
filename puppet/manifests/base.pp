@@ -63,33 +63,6 @@ class {'sigmah::maven_proxy_setup' : } ->
 class {'sigmah::maven_install_missing_plugins' : }
 
 
-# Install Subversion client (only temporary...will soon be moving to github :D :D )
-#
-# To Do :: Add Proxy support for SVN conf based on the vagrant-proxy-conf settings
-package {"subversion":
- ensure => "installed"
-} ->
-
-class {'sigmah::subversion_proxy_config' : } ->
-
-class {'subversion:checkout' :}
-
-## Clone the sigmah repo from google code
-#subversion::checkout { "application/trunk": 
-#    repopath    => "/svn/trunk",
-#    workingdir  => "/vagrant/sigmah-svn",
-#    host        => "sigma-h.googlecode.com",
-#    method      => "http",
-#    svnuser     => "",
-#    password    => "",
-#     require     => File["/vagrant/sigmah-svn"]
-#}
-
-
-
-
-
-
 
 
 
