@@ -16,3 +16,6 @@
 [submodule "puppet/modules/maven"]
 	path = puppet/modules/maven
 	url = https://github.com/7terminals/puppet-maven
+[submodule "shared/sigmah"]
+	path = shared/sigmah
+	url = https://github.com/spMohanty/sigmah_svn_to_git_migration_test.git
